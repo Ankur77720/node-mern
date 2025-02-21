@@ -27,6 +27,9 @@ module.exports.registerUserController = async (req, res) => {
         email: user.email
     }, "node-auth-secret")
 
+
+    res.cookie("token", token)
+
     res.status(201).json({
         user, token
     })
