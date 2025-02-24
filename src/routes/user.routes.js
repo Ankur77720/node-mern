@@ -11,8 +11,12 @@ router.get('/register', userController.registerViewController)
 router.post('/register', userController.registerUserController)
 
 
+router.get('/login', userController.loginViewController)
+
+router.post('/login', userController.loginUserController)
+
 /* /users/profile [get] */
-router.get('/profile',(req,res)=>{
+router.get('/profile', (req, res) => {
     const token = req.cookies.token
 })
 
