@@ -6,6 +6,8 @@ const userMiddleware = require("../middlewares/user.middleware")
 /* /posts/create [get] */
 router.get('/create', userMiddleware.authUser, postController.createPostView)
 
+
+/* /posts/create [post] */
 router.post('/create', userMiddleware.authUser, postController.createPost)
 
 module.exports = router
