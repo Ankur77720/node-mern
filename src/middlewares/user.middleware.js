@@ -8,7 +8,6 @@ module.exports.authUser = async (req, res, next) => {
                 message: "unauthorized"
             })
         }
-
         const decoded = jwt.verify(token, "node-auth-secret")
         req.user = decoded
         next()

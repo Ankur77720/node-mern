@@ -1,6 +1,7 @@
 const userModel = require("../models/user.model")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const postModel = require("../models/post.model")
 
 module.exports.registerViewController = (req, res) => {
 
@@ -76,5 +77,16 @@ module.exports.loginUserController = async (req, res) => {
         token
     })
 
+
+}
+
+
+module.exports.feedViewController = async (req, res) => {
+
+    const posts = await postModel.find().populate("author")
+
+    console.log(posts)
+
+    res.render('feed', { posts })
 
 }
