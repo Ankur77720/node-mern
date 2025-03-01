@@ -15,6 +15,7 @@ router.get('/login', userController.loginViewController)
 
 router.post('/login', userController.loginUserController)
 
+/* /users/feed [get] {protected} */
 router.get('/feed', userMiddleware.authUser,userController.feedViewController)
 
 
